@@ -1,0 +1,31 @@
+{
+  "name": "assessable",
+  "version": "0.1.0",
+  "description": "Composable, schema-driven assessment/validation framework with pluggable operators, reporters, and classifiers.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "smoke": "node --enable-source-maps dist/smoke.js"
+  },
+  "keywords": [
+    "assessment",
+    "validation",
+    "schema",
+    "testing",
+    "assessable"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}
