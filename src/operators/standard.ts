@@ -1,7 +1,7 @@
 
-import { deepEqual } from '../vendor/equals';
-import type { Evaluation, EvaluationResultArgs } from './../types';
-import { EvaluationStatus } from './../types';
+import { deepEqual } from '../vendor/equals.js';
+import type { Evaluation, EvaluationResultArgs } from './../types.js';
+import { EvaluationStatus } from './../types.js';
 
 export default {
 

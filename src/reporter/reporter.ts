@@ -1,8 +1,8 @@
 
 
 
-import { Subscription } from '../vendor/subscription'
-import { Condition, Assessor, EvaluationResult, Evaluation, EvaluationResultArgs, EvaluationStatus } from './../types'
+import { Subscription } from '@console-one/subscription'
+import { Condition, Assessor, EvaluationResult, Evaluation, EvaluationResultArgs, EvaluationStatus } from './../types.js'
 
 
 

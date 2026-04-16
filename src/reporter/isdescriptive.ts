@@ -1,10 +1,10 @@
-import { ListMultimap } from '../vendor/multimap/list';
-import { Colors } from '../vendor/color';
-import { truncate } from '../vendor/strings';
-import { pick, toSet, mergeMaps as merge } from '../vendor/functional/object'
-import { EvaluationStatus, Condition } from './../types';
-import { EvaluationResult, EvaluationResultArgs, AsyncEvaluation, Assessor } from './../types';
-import { TestSummarizer, SummarizerFactory } from './../summarizer';
+import { ListMultimap } from '@console-one/multimap';
+import { Colors } from '../vendor/color.js';
+import { truncate } from '../vendor/strings.js';
+import { pick, toSet, mergeMaps as merge } from '../vendor/functional/object.js'
+import { EvaluationStatus, Condition } from './../types.js';
+import { EvaluationResult, EvaluationResultArgs, AsyncEvaluation, Assessor } from './../types.js';
+import { TestSummarizer, SummarizerFactory } from './../summarizer.js';
 
 const Color = Colors.all;
 

@@ -1,8 +1,8 @@
-import { clone } from './vendor/functional/object';
-import TestBuilder from './builder';
-import type { AssessableJSON } from './types';
-import { Condition } from './types';
-import { and as andReqs, or as orReqs } from './utils';
+import { clone } from './vendor/functional/object.js';
+import TestBuilder from './builder.js';
+import type { AssessableJSON } from './types.js';
+import { Condition } from './types.js';
+import { and as andReqs, or as orReqs } from './utils.js';
 
 
 export class SchemaBuilder {

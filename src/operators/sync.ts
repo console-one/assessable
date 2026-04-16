@@ -1,7 +1,7 @@
 
-import { deepEqual } from '../vendor/equals';
-import { EvaluationStatus } from './../types';
-import type { EvaluationResult, EvaluationResultArgs, Evaluation } from './../types';
+import { deepEqual } from '../vendor/equals.js';
+import { EvaluationStatus } from './../types.js';
+import type { EvaluationResult, EvaluationResultArgs, Evaluation } from './../types.js';
 
 export const Operators = {
 

@@ -1,11 +1,11 @@
-import { Subscription } from '../vendor/subscription';
-import { WalkerFactory } from '../vendor/walker';
-import type { OperatorDefinitions } from '../types';
-import { ListMultimap } from '../vendor/multimap/list';
-import TestBuilder from '../builder';
-import StandardOperators from './../operators/standard';
-import { Classification, ClassificationResult } from './classification';
-import { Classifier } from './classifier';
+import { Subscription } from '@console-one/subscription';
+import { WalkerFactory } from '@console-one/walker';
+import type { OperatorDefinitions } from '../types.js';
+import { ListMultimap } from '@console-one/multimap';
+import TestBuilder from '../builder.js';
+import StandardOperators from './../operators/standard.js';
+import { Classification, ClassificationResult } from './classification.js';
+import { Classifier } from './classifier.js';
 
 
 

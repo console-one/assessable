@@ -1,9 +1,9 @@
 
 
-import { RapidTestGenerator } from "../generator" 
-import AccessPermissioning from './../operators/credentials'
-import { OperatorSet, OperatorDefinitions } from './../types'
-import TestBuilder from "../builder"
+import { RapidTestGenerator } from "../generator.js"
+import AccessPermissioning from './../operators/credentials.js'
+import { OperatorSet, OperatorDefinitions } from './../types.js'
+import TestBuilder from "../builder.js"
 
 export default (credentialsProvider: (name: string) => Promise<(json: any) => Promise<boolean>>) => {
   let operators: OperatorDefinitions[] = []; 

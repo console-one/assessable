@@ -1,9 +1,9 @@
 
 
-import { underride } from '../vendor/functional/object';
-import type { Evaluation, EvaluationResultArgs } from './../types';
-import { EvaluationStatus, OperatorSet } from './../types';
-import StandardOperators from './standard';
+import { underride } from '../vendor/functional/object.js';
+import type { Evaluation, EvaluationResultArgs } from './../types.js';
+import { EvaluationStatus, OperatorSet } from './../types.js';
+import StandardOperators from './standard.js';
 
 const Underridden = StandardOperators as OperatorSet;
 

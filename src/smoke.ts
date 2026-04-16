@@ -1,4 +1,4 @@
-import { check, Schema } from './index'
+import { check, Schema } from './index.js'
 
 async function main() {
   const validateUser = check(Schema({

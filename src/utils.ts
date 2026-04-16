@@ -1,5 +1,5 @@
 
-import { AssessableJSON } from './types'
+import { AssessableJSON } from './types.js'
 /**
  * Combines two AssessableJSON objects using a logical AND operation.
  *

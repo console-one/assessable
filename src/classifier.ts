@@ -1,12 +1,12 @@
-import { Handler, WalkerFactory } from './vendor/walker';
-import { Schema } from './schema';
-import { Queue } from './vendor/queue';
-import TestBuilder from './builder';
-import StandardOperators from './operators/sync';
-import { IsContinuousReporter } from './reporter/iscontinuous';
-import TestRunner from './runner';
-import type { Assessable } from './types';
-import { Requireable } from './types';
+import { Handler, WalkerFactory } from '@console-one/walker';
+import { Schema } from './schema.js';
+import { ObservableQueue as Queue } from '@console-one/collections';
+import TestBuilder from './builder.js';
+import StandardOperators from './operators/sync.js';
+import { IsContinuousReporter } from './reporter/iscontinuous.js';
+import TestRunner from './runner.js';
+import type { Assessable } from './types.js';
+import { Requireable } from './types.js';
 
 const testRunner: TestRunner<boolean> = new TestRunner(IsContinuousReporter);
 

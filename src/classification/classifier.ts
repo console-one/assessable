@@ -1,7 +1,7 @@
-import { Classification , ClassificationResult } from './classification'
-import {  WalkerFactory } from '../vendor/walker';
-import { Subscription } from '../vendor/subscription'
-import { QueryCollector } from './querycollector'
+import { Classification , ClassificationResult } from './classification.js'
+import {  WalkerFactory } from '@console-one/walker';
+import { Subscription } from '@console-one/subscription'
+import { QueryCollector } from './querycollector.js'
 
 export class Classifier {
 

@@ -1,5 +1,5 @@
 
-export { ClassifierBuilder } from './classifierbuilder'
-export { Classifier } from './classifier'
-export { Classification } from './classification'
-export { ClassificationResult } from './classification'
+export { ClassifierBuilder } from './classifierbuilder.js'
+export { Classifier } from './classifier.js'
+export { Classification } from './classification.js'
+export { ClassificationResult } from './classification.js'

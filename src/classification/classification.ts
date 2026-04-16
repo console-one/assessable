@@ -1,9 +1,9 @@
-import { Subscription } from '../vendor/subscription';
-import { IsContinuousReporter } from '../reporter/iscontinuous';
-import { Assessable, EvaluationResult, EvaluationStatus } from '../types';
-import { QueryCollector } from './querycollector'
-import { Requireable } from '../types';
-import { Schema } from '../schema';
+import { Subscription } from '@console-one/subscription';
+import { IsContinuousReporter } from '../reporter/iscontinuous.js';
+import { Assessable, EvaluationResult, EvaluationStatus } from '../types.js';
+import { QueryCollector } from './querycollector.js'
+import { Requireable } from '../types.js';
+import { Schema } from '../schema.js';
 
 export type ClassificationResult = { classification: string, result: EvaluationResult, id: string }
 

@@ -1,10 +1,10 @@
 
-import { ListMultimap } from '../vendor/multimap/list';
-import { Assessor, SyncEvaluation, EvaluationResult, EvaluationResultArgs } from './../types';
-import { Condition, EvaluationStatus } from './../types';
-import { pick, toSet, } from '../vendor/functional/object'
-import { Queue } from '../vendor/queue-simple'
-import { PipedHandler } from '../vendor/walker'
+import { ListMultimap } from '@console-one/multimap';
+import { Assessor, SyncEvaluation, EvaluationResult, EvaluationResultArgs } from './../types.js';
+import { Condition, EvaluationStatus } from './../types.js';
+import { pick, toSet, } from '../vendor/functional/object.js'
+import { LinkedQueue as Queue } from '@console-one/collections'
+import { PipedHandler } from '@console-one/walker'
 
 
 

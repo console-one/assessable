@@ -1,6 +1,6 @@
 
-import { Closure } from './vendor/closure';
-import { ListMultimap } from './vendor/multimap/list';
+import { Closure } from './vendor/closure.js';
+import { ListMultimap } from '@console-one/multimap';
 
 export type SummarizerSink = <K>(name: string, result: Promise<K>, startTime: number, category?: string) => void
 

@@ -1,5 +1,5 @@
 
-import type { Reporter, Evaluation, Evaluatable, Assessor, Assessable, AssessableJSON, OperatorDefinitions } from './types';
+import type { Reporter, Evaluation, Evaluatable, Assessor, Assessable, AssessableJSON, OperatorDefinitions } from './types.js';
 
 export class Validation implements Evaluatable {
 

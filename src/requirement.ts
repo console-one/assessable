@@ -1,7 +1,6 @@
-import { ListMultimap } from './vendor/multimap/list';
-import { SetMultimap } from './vendor/multimap/set';
-import { Condition } from './types';
-import type { Reporter, Assessor, Assessable } from './types';
+import { ListMultimap, SetMultimap } from '@console-one/multimap';
+import { Condition } from './types.js';
+import type { Reporter, Assessor, Assessable } from './types.js';
 
 export default class Requirement {
 

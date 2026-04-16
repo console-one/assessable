@@ -1,6 +1,6 @@
 
-import type { EvaluationResultArgs } from './../types';
-import { EvaluationStatus } from './../types';
+import type { EvaluationResultArgs } from './../types.js';
+import { EvaluationStatus } from './../types.js';
 
 export default {
   // IS_ENCODING: () => ({

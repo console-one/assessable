@@ -1,10 +1,9 @@
-import { Handler } from './vendor/walker';
-import { JSONPathWalker } from './vendor/walker/json';
-import TestBuilder from './builder';
-import { DescriptiveResult, IsDescriptiveReporter } from './reporter/isdescriptive';
-import { IsValidReporter } from './reporter/isvalid';
-import type { AssessableJSON, Assessor, Reporter } from './types';
-import StandardOperators from './operators/standard';
+import { Handler, JSONPathWalker } from '@console-one/walker';
+import TestBuilder from './builder.js';
+import { DescriptiveResult, IsDescriptiveReporter } from './reporter/isdescriptive.js';
+import { IsValidReporter } from './reporter/isvalid.js';
+import type { AssessableJSON, Assessor, Reporter } from './types.js';
+import StandardOperators from './operators/standard.js';
 
 export class TestGenerator<K> {
 

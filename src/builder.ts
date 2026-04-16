@@ -1,7 +1,7 @@
-import Requirement from './requirement';
-import type { Assessable, AssessableJSON, Assessor, Evaluation, OperatorDefinitions, Reporter, Requireable } from './types';
-import { Condition } from './types';
-import { ValidatorFactory } from './validation';
+import Requirement from './requirement.js';
+import type { Assessable, AssessableJSON, Assessor, Evaluation, OperatorDefinitions, Reporter, Requireable } from './types.js';
+import { Condition } from './types.js';
+import { ValidatorFactory } from './validation.js';
 
 class EvaluationIndex {
 

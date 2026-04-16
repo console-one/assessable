@@ -1,6 +1,6 @@
-import { Subscription } from '../vendor/subscription';
-import { EvaluationResult } from '../types';
-import { Classification } from './classification';
+import { Subscription } from '@console-one/subscription';
+import { EvaluationResult } from '../types.js';
+import { Classification } from './classification.js';
 
 const delim = `|||||`
 

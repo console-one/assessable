@@ -1,5 +1,5 @@
 
-import { Closure } from './closure'
+import { Closure } from './closure.js'
 
 
 const colors: { [key: string]: ColorCodes } = { all: {} };

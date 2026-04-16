@@ -2,6 +2,7 @@
   "name": "@console-one/assessable",
   "version": "0.1.0",
   "description": "Composable, schema-driven assessment/validation framework with pluggable operators, reporters, and classifiers.",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -24,6 +25,12 @@
   ],
   "license": "UNLICENSED",
   "private": true,
+  "dependencies": {
+    "@console-one/collections": "^0.1.0",
+    "@console-one/multimap": "^0.1.0",
+    "@console-one/subscription": "^0.1.0",
+    "@console-one/walker": "^0.1.0"
+  },
   "devDependencies": {
     "typescript": "^5.4.0",
     "@types/node": "^20.0.0"

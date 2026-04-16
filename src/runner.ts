@@ -1,8 +1,7 @@
-import { Handler } from './vendor/walker';
-import { JSONPathWalker } from './vendor/walker/json';
-import { DescriptiveResult } from './reporter/isdescriptive';
-import TestSet from './set';
-import type { Assessable, Assessor, Reporter, SingleTest, Test } from './types';
+import { Handler, JSONPathWalker } from '@console-one/walker';
+import { DescriptiveResult } from './reporter/isdescriptive.js';
+import TestSet from './set.js';
+import type { Assessable, Assessor, Reporter, SingleTest, Test } from './types.js';
 
 export default class TestRunner<K> {
 

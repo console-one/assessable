@@ -1,5 +1,5 @@
-import { Colors } from '../vendor/color';
-import { DescriptiveResult } from './isdescriptive';
+import { Colors } from '../vendor/color.js';
+import { DescriptiveResult } from './isdescriptive.js';
 
 const Color = Colors.all;
 

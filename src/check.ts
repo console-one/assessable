@@ -1,8 +1,8 @@
-import TestBuilder from './builder';
-import StandardOperators from './operators/standard';
-import { IsValidReporter } from './reporter/isvalid';
-import TestRunner from './runner';
-import type { Assessable, SingleTest } from './types';
+import TestBuilder from './builder.js';
+import StandardOperators from './operators/standard.js';
+import { IsValidReporter } from './reporter/isvalid.js';
+import TestRunner from './runner.js';
+import type { Assessable, SingleTest } from './types.js';
 
 const testBuilder = new TestBuilder([
   StandardOperators.IS_TYPE(),
