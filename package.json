@@ -2,13 +2,27 @@
   "name": "@console-one/assessable",
   "version": "0.1.0",
   "description": "Composable, schema-driven assessment/validation framework with pluggable operators, reporters, and classifiers.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/console-one/assessable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/console-one/assessable/issues"
+  },
+  "homepage": "https://github.com/console-one/assessable#readme",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist",
-    "src",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc",
@@ -23,8 +37,8 @@
     "testing",
     "assessable"
   ],
-  "license": "UNLICENSED",
-  "private": true,
+  "author": "Andrew Chalmers",
+  "license": "MIT",
   "dependencies": {
     "@console-one/collections": "^0.1.0",
     "@console-one/multimap": "^0.1.0",
