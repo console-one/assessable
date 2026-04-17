@@ -1,6 +1,6 @@
 {
   "name": "@console-one/assessable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Composable, schema-driven assessment/validation framework with pluggable operators, reporters, and classifiers.",
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
     "@console-one/walker": "^0.1.0"
   },
   "devDependencies": {
-    "typescript": "^5.4.0",
-    "@types/node": "^20.0.0"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
   }
 }
