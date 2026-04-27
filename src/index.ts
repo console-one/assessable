@@ -41,3 +41,16 @@ export { default as SyncOperators } from './operators/sync.js'
 export { default as CredentialOperators } from './operators/credentials.js'
 
 export { Classifier, Classification, ClassifierBuilder, SchemaClassification } from './classifier.js'
+
+// Test-runner half: discover test files, build per-file environments,
+// route assertions through validators, summarize results.
+export { Validator, ExpectChain } from './validator.js'
+export type { ExpectClassification } from './validator.js'
+export { TestEnvironment, TestEnvironmentFactory } from './environment.js'
+export type { TestSetter, TestContext } from './environment.js'
+export {
+  DescriptiveTestEnvironment,
+  DescriptiveTestSummarizer,
+  DescriptiveSummarizerFactory,
+} from './environments/descriptive.js'
+export { DescriptiveTestFileExecutor } from './file-executor/descriptive.js'

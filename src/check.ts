@@ -8,7 +8,10 @@ const testBuilder = new TestBuilder([
   StandardOperators.IS_TYPE(),
   StandardOperators.IS(),
   StandardOperators.EXISTS(),
-  StandardOperators.IS_IN()
+  StandardOperators.IS_IN(),
+  StandardOperators.CONTAINS(),
+  StandardOperators.KEYS_ARE(),
+  StandardOperators.LENGTH_IS(),
 ]);
 
 const testRunner: TestRunner<boolean> = new TestRunner(IsValidReporter);

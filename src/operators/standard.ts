@@ -24,7 +24,7 @@ export default {
       }
     })
   }),
-  
+
   IS: () => ({
     name: 'is',
     names: ['is', 'IS', 'EQUALS', 'IS_EQUAL'],
@@ -101,5 +101,61 @@ export default {
         }
       }
     }
-  })
+  }),
+
+  // KEYS_ARE — value at path must be a plain object whose key set equals
+  // the supplied list. Both extra and missing keys are reported.
+  // Closes the open-shape escape hatch in `Schema(obj)` (which only
+  // checks paths it names).
+  KEYS_ARE: () => ({
+    name: 'keys are',
+    names: ['KEYS_ARE', 'keysAre', 'keys_are', 'keysare'],
+    create: (expectedKeys: string[]) => ({
+      name: 'keys are',
+      async evaluate(item: any, path: string): Promise<EvaluationResultArgs> {
+        if (typeof item !== 'object' || item === null || Array.isArray(item)) {
+          return [
+            EvaluationStatus.Fail,
+            `Item at ${path} is not a plain object — cannot check key set.`,
+          ];
+        }
+        const actualKeys = new Set(Object.keys(item));
+        const expected = new Set(expectedKeys);
+        const extra = [...actualKeys].filter((k) => !expected.has(k));
+        const missing = [...expected].filter((k) => !actualKeys.has(k));
+        if (extra.length === 0 && missing.length === 0) return [EvaluationStatus.Pass];
+        const parts: string[] = [];
+        if (extra.length > 0) parts.push(`extra keys: ${extra.join(', ')}`);
+        if (missing.length > 0) parts.push(`missing keys: ${missing.join(', ')}`);
+        return [
+          EvaluationStatus.Fail,
+          `Object at ${path} has key set mismatch — ${parts.join('; ')}.`,
+        ];
+      },
+    }),
+  }),
+
+  // LENGTH_IS — value at path must have a numeric `.length` matching the
+  // supplied number. Works on arrays and strings; can be used to enforce
+  // exact array sizes (the open-shape escape hatch in `Schema([...])`).
+  LENGTH_IS: () => ({
+    name: 'length is',
+    names: ['LENGTH_IS', 'lengthIs', 'length_is', 'lengthis'],
+    create: (expected: number) => ({
+      name: 'length is',
+      async evaluate(item: any, path: string): Promise<EvaluationResultArgs> {
+        if (item === null || item === undefined || typeof item.length !== 'number') {
+          return [
+            EvaluationStatus.Fail,
+            `Item at ${path} has no numeric .length property — cannot check length.`,
+          ];
+        }
+        if (item.length === expected) return [EvaluationStatus.Pass];
+        return [
+          EvaluationStatus.Fail,
+          `Length at ${path} is ${item.length}; expected ${expected}.`,
+        ];
+      },
+    }),
+  }),
 }

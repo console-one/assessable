@@ -1,7 +1,7 @@
 {
   "name": "@console-one/assessable",
-  "version": "0.1.1",
-  "description": "Composable, schema-driven assessment/validation framework with pluggable operators, reporters, and classifiers.",
+  "version": "0.1.2",
+  "description": "Composable, schema-driven assessment/validation framework with pluggable operators, reporters, and classifiers. Includes a directory-walking test runner (DescriptiveTestFileExecutor) for tests-as-default-export-functions.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/console-one/assessable.git"
@@ -25,10 +25,11 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
-    "prepublishOnly": "npm run clean && npm run build",
-    "smoke": "node --enable-source-maps dist/smoke.js"
+    "prepublishOnly": "npm run clean && npm run build && npm run test",
+    "smoke": "node --enable-source-maps dist/smoke.js",
+    "test": "node dist/test-runner.js"
   },
   "keywords": [
     "assessment",

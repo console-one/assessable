@@ -126,9 +126,70 @@ function recursivelyBuild(obj: any, initialPath = '@', requirements: any[] = [])
 }
 
 
-export const Schema = (objectSchema: any): AssessableJSON => {
-  let requirements = recursivelyBuild(objectSchema);
-  return requirements;
+/**
+ * Recursive companion to {@link recursivelyBuild} that also adds
+ * KEYS_ARE / LENGTH_IS at every object/array level. Closes the
+ * "extra keys silently pass" and "longer arrays silently pass" gaps in
+ * the open-shape Schema.
+ */
+function recursivelyBuildClosed(obj: any, initialPath = '@', requirements: any[] = []): AssessableJSON {
+  const path = initialPath === undefined ? '@' : initialPath;
+  if (obj === null || obj === undefined) {
+    requirements.push([path, 'IS', obj]);
+  } else if (typeof obj === 'object') {
+    if (obj instanceof SchemaBuilder) {
+      requirements.push([path, 'IS', obj]);
+    } else if (Array.isArray(obj)) {
+      requirements.push([path, 'LENGTH_IS', obj.length]);
+      for (let i = 0; i < obj.length; i++) {
+        recursivelyBuildClosed(obj[i], `${path}.${i}`, requirements);
+      }
+    } else if (Object.keys(obj).length === 0) {
+      requirements.push([path, 'IS', {}]);
+      requirements.push([path, 'KEYS_ARE', []]);
+    } else {
+      const keys = Object.keys(obj);
+      requirements.push([path, 'KEYS_ARE', keys]);
+      for (const key of keys) {
+        recursivelyBuildClosed(obj[key], `${path}.${key}`, requirements);
+      }
+    }
+  } else if (obj in SchemaTypes) {
+    requirements.push([path, 'IS_TYPE', SchemaTypes[obj as keyof typeof SchemaTypes]]);
+  } else {
+    requirements.push([path, 'IS', obj]);
+  }
+  return {
+    condition: Condition.AND,
+    requirements,
+  };
 }
+
+const SchemaImpl = (objectSchema: any): AssessableJSON => {
+  return recursivelyBuild(objectSchema);
+};
+
+const SchemaClosedImpl = (objectSchema: any): AssessableJSON => {
+  return recursivelyBuildClosed(objectSchema);
+};
+
+/**
+ * Build an `AssessableJSON` from a schema-by-example.
+ *
+ * `Schema(obj)` is the open form: only the paths named in `obj` are
+ * checked. Extra keys in actual / longer arrays in actual silently
+ * pass. Useful for forward-compat checks.
+ *
+ * `Schema.closed(obj)` is the strict form: every object level also
+ * carries a `KEYS_ARE` constraint, every array level a `LENGTH_IS`
+ * constraint. Use when you want exact-shape matching.
+ *
+ * @example
+ *   Schema({ name: 'string' })            // open
+ *   Schema.closed({ name: 'string' })     // strict
+ */
+export const Schema: ((objectSchema: any) => AssessableJSON) & {
+  closed: (objectSchema: any) => AssessableJSON;
+} = Object.assign(SchemaImpl, { closed: SchemaClosedImpl });
 
 
