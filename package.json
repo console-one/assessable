@@ -1,6 +1,6 @@
 {
   "name": "@console-one/assessable",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Composable, schema-driven assessment/validation framework with pluggable operators, reporters, and classifiers. Includes a directory-walking test runner (DescriptiveTestFileExecutor) for tests-as-default-export-functions.",
   "repository": {
     "type": "git",
